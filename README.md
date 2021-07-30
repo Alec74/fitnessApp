@@ -1,6 +1,6 @@
 # Fitness App
 
-For this project I setup a server backend and schema through MongoDB for a Fitness Tracking Application. The app is hosted on heroku and can be found here --> 
+For this project I setup a server backend and schema through MongoDB for a Fitness Tracking Application. The app is hosted on heroku and can be found here --> https://fitnessforyou.herokuapp.com/
 
 The objectives to complete this Project include the following:
 
@@ -18,3 +18,4 @@ After navigating to the webpage...
 ![image of webpage](images/demo3.png)
 
 View Live Webpage!
+https://fitnessforyou.herokuapp.com/
