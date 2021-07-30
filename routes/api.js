@@ -25,6 +25,7 @@ router.get("/api/workouts", (req, res) => {
         }
     ])
         .then(workout => {
+            console.log(workout)
             res.json(workout);
         })
         .catch((err) => {
@@ -37,9 +38,9 @@ router.get("/api/workouts/range", (req, res) => {
         {
             $addFields: {
                 totalDuration:
-                    { $sum: "exercises.duration" },
+                    { $sum: "$exercises.duration" },
                 totalweight:
-                    { $sum: "exercises.weight" }
+                    { $sum: "$exercises.weight" }
             }
         }
     ])
@@ -55,7 +56,7 @@ router.get("/api/workouts/range", (req, res) => {
 router.put("/api/workouts/:id", (req, res) => {
     Workout.findOneAndUpdate(
         req.params.id,
-        { $push: { exercise: req.body } },
+        { $push: { exercises: req.body } },
         { new: true, runValidators: true }
     )
         .then(workout => {
